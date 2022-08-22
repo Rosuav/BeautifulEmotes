@@ -1,0 +1,22 @@
+* {box-sizing: border-box;}
+h1,h2,h3 {
+	max-width: max-content;
+	margin: 0.25em auto 0;
+}
+figure {
+	display: inline-block;
+	margin: 0; padding: 0;
+}
+figcaption
+{
+	text-align: center;
+	/* There's a bit of a gap above the caption, which seems wrong.
+	Move that gap to the bottom instead. */
+	margin-top: -0.25em;
+	margin-bottom: 0.25em;
+	font-size: 50%;
+}
+img {
+	border: 1px solid green;
+	width: 58px; height: 58px;
+}
