@@ -1,5 +1,5 @@
 import {choc, set_content, on, DOM} from "https://rosuav.github.io/choc/factory.js";
-const {BR, FIGCAPTION, FIGURE, H1, H2, H3, IMG} = choc; //autoimport
+const {A, BR, FIGCAPTION, FIGURE, H1, H3, IMG, P} = choc; //autoimport
 
 let auth = null;
 async function twitch(url, args) {
@@ -62,6 +62,10 @@ Twitch.ext.onAuthorized(async a => {
 	if (!emotesets.length) emotesets = ["None", ["No emotes found for this channel. Partnered and affiliated channels have emote slots available; emotes awaiting approval may not show up here."]];
 	set_content("main", [
 		H1("Emotes are Beautiful!"),
+		P(A({
+			href: "https://sikorsky.rosuav.com/emotes?broadcaster=" + auth.channelId,
+			target: "_blank",
+		}, "Pop out - enlarge - enhance!")),
 		emotesets.map(([lbl, set]) => [
 			H3(lbl),
 			set.map(em => em.length
