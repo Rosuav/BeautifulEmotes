@@ -1,4 +1,4 @@
-import {choc, set_content, on, DOM} from "https://rosuav.github.io/choc/factory.js";
+import {choc, set_content, on, DOM} from "./factory.js";
 const {A, BR, FIGCAPTION, FIGURE, H1, H3, IMG, P} = choc; //autoimport
 
 let auth = null;
