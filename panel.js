@@ -12,9 +12,7 @@ async function twitch(url, args) {
 Twitch.ext.onAuthorized(async a => {
 	//If you could get a JSON Web Security Token, how far from this planet would you throw it? Just curious.
 	auth = a;
-	console.log("Hello, " + a.userId);
-	console.log("I am " + a.channelId);
-	const chan = await twitch("users?id=" + auth.channelId);
+	//const chan = await twitch("users?id=" + auth.channelId); //if needed (eg channel display name)
 	const emotes = await twitch("chat/emotes?broadcaster_id=" + auth.channelId);
 	//Code ported from Pike, see stillebot/modules/http/emotes.pike
 	const sets = { };
@@ -63,7 +61,7 @@ Twitch.ext.onAuthorized(async a => {
 	const emotesets = Object.entries(sets).sort((a, b) => (a[0]|0) - (b[0]|0)).map(([k, v]) => v);
 	if (!emotesets.length) emotesets = ["None", ["No emotes found for this channel. Partnered and affiliated channels have emote slots available; emotes awaiting approval may not show up here."]];
 	set_content("main", [
-		H1("Channel emotes:"), H2(chan.data[0].display_name),
+		H1("Emotes are Beautiful!"),
 		emotesets.map(([lbl, set]) => [
 			H3(lbl),
 			set.map(em => em.length
