@@ -21,3 +21,24 @@ img {
 	border: 1px solid green;
 	width: 58px; height: 58px;
 }
+
+/* Dark mode vs light mode */
+/* Colour selections taken directly from recommendations
+at https://dev.twitch.tv/docs/extensions/designing */
+body[data-theme=light] {
+	background: #fff;
+	color: #232127;
+}
+
+body[data-theme=light] a {
+	color: #6441A4;
+}
+
+body[data-theme=dark] {
+	background: #201c2b;
+	color: #e5e3e8;
+}
+
+body[data-theme=dark] a {
+	color: #e2dbf0;
+}

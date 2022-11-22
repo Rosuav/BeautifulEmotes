@@ -75,3 +75,6 @@ Twitch.ext.onAuthorized(async a => {
 		]),
 	]);
 });
+Twitch.ext.onContext(ctx => {
+	document.body.dataset.theme = ctx.theme; //usually "light" or "dark"
+});
